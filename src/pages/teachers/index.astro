@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Database } from "bun:sqlite";
+
+// Connexion à la base de données
+const db = new Database("./data/scolarite.sqlite");
+const teachers = db.query("SELECT * FROM teachers").all();
+---
+
+<Layout title="Liste des professeurs">
+    <main>
+        <h1>Nos Teachers</h1>
+        <ul>
+            {
+                teachers.map((teacher) => (
+                    <li>
+                        {teacher.first_name} {teacher.last_name} (
+                        {teacher.email})
+                    </li>
+                ))
+            }
+        </ul>
+    </main>
+</Layout>
