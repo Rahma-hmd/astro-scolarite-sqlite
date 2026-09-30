@@ -3,8 +3,8 @@ import Google from '@auth/core/providers/google';
 import { defineConfig } from 'auth-astro';
 
 export default defineConfig({
-    // Permet de faire confiance aux en-têtes du proxy Apache (évite l'erreur 403 Cross-site)
     trustHost: true,
+    baseURL: 'https://appscolarite.rahmaproject.fr', // <--- Force l'URL exacte reconnue par Auth.js
 
     providers: [
         Google({
