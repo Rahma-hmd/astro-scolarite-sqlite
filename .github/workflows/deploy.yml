@@ -51,7 +51,7 @@ jobs:
             sleep 5
 
             echo "Health check..."
-            curl --fail http://127.0.0.1:4321/
+            curl --fail http://localhost:3000/
 
             echo "======================================"
             echo "Déploiement terminé"
