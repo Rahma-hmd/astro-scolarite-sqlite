@@ -25,6 +25,12 @@ jobs:
 
           script: |
             set -e
+            script: |
+        set -e
+        export PATH="/home/etudiant/.bun/bin:$PATH"
+
+        echo "======================================"
+        echo "Début du déploiement"
 
             echo "======================================"
             echo "Début du déploiement"
