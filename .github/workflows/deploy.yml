@@ -1,4 +1,3 @@
-
 name: Deploy AstroJS
 
 on:
@@ -48,8 +47,11 @@ jobs:
             echo "Vérification du service..."
             sudo systemctl status scolarite
 
+            echo "Attente du démarrage..."
+            sleep 5
+
             echo "Health check..."
-            curl --fail http://localhost:4321/
+            curl --fail http://127.0.0.1:4321/
 
             echo "======================================"
             echo "Déploiement terminé"
